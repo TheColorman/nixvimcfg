@@ -9,6 +9,7 @@
 
   outputs = {nixvimchad, ...}:
     nixvimchad.withExtension ({...}: {
+      plugins.markdown-preview.enable = true;
       extraConfigLuaPost = ''
         --  ▗▄▄▖ ▗▄▖ ▗▖   ▗▄▄▄▖▗▖  ▗▖ ▗▄▖ ▗▖ ▗▖     ▗▄▄▖▗▖ ▗▖▗▄▄▖ ▗▖       ▗▄▄▖ ▗▄▄▄▖▗▖  ▗▖ ▗▄▖ ▗▄▄▖ ▗▄▄▖▗▄▄▄▖▗▖  ▗▖ ▗▄▄▖
         -- ▐▌   ▐▌ ▐▌▐▌   ▐▌   ▐▛▚▞▜▌▐▌ ▐▌▐▌▗▞▘    ▐▌   ▐▌ ▐▌▐▌ ▐▌▐▌       ▐▌ ▐▌▐▌   ▐▛▚▞▜▌▐▌ ▐▌▐▌ ▐▌▐▌ ▐▌ █  ▐▛▚▖▐▌▐▌
