@@ -303,11 +303,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1730352315,
-        "narHash": "sha256-eKEqbD8szgqGxnKk/NoL09ddd2ZBGA8z6EHRWRUFJiw=",
+        "lastModified": 1730382028,
+        "narHash": "sha256-Krc4heBia3qSRmknAATFWoV8BQASdbc/C/h86NKd3yk=",
         "owner": "thecolorman",
         "repo": "nixvimchad",
-        "rev": "0a5507325c6abf3a12e0b3267b57624aa7262692",
+        "rev": "2f8893624c96ddd4ad8e37119b57ae29e6a59f40",
         "type": "github"
       },
       "original": {
