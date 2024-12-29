@@ -10,7 +10,7 @@
 
   outputs = {nixvimchad, ...}:
     nixvimchad.configure ({pkgs,...}:  (import ./nixvim.nix) // {
-      extraPackages = with pkgs; [ nixd ];
+      extraPackages = with pkgs; [ nixd svelte-language-server ];
 
       chad.plugins = {
         lspconfig.pluginConfig.config = ''
@@ -19,7 +19,7 @@
 
             local lspconfig = require "lspconfig"
 
-            local servers = { "nixd" }
+            local servers = { "nixd", "svelte" }
             local nvlsp = require "nvchad.configs.lspconfig"
 
             for _, lsp in ipairs(servers) do
