@@ -19,7 +19,7 @@
 
             local lspconfig = require "lspconfig"
 
-            local servers = { "nixd", "svelte" }
+            local servers = { "nixd", "svelte", "clangd" }
             local nvlsp = require "nvchad.configs.lspconfig"
 
             for _, lsp in ipairs(servers) do
