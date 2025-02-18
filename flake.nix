@@ -19,7 +19,7 @@
 
             local lspconfig = require "lspconfig"
 
-            local servers = { "nixd", "svelte", "clangd", "ruff" }
+            local servers = { "nixd", "svelte", "clangd", "ruff", "docker_compose_language_service", "dockerls" }
             local nvlsp = require "nvchad.configs.lspconfig"
 
             for _, lsp in ipairs(servers) do
