@@ -19,7 +19,7 @@
 
             local lspconfig = require "lspconfig"
 
-            local servers = { "nixd", "svelte", "clangd", "ruff", "docker_compose_language_service", "dockerls" }
+            local servers = { "nixd", "svelte", "clangd", "ruff", "dockerls" }
             local nvlsp = require "nvchad.configs.lspconfig"
 
             for _, lsp in ipairs(servers) do
@@ -29,6 +29,13 @@
                 capabilities = nvlsp.capabilities,
               }
             end
+
+            lspconfig.docker_compose_language_service.setup {
+              on_attach = nvlsp.on_attach,
+              on_init = nvlsp.on_init,
+              capabilities = nvlsp.capabilities,
+              filetypes = { "yaml.docker-compose", "yaml.docker-stack" },
+            }
           end
         '';
         cmp.pluginConfig.opts.__raw = ''
