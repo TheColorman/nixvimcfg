@@ -38,6 +38,14 @@
             }
           end
         '';
+        conform.pluginConfig.opts = {
+          formatters_by_ft = {lua = ["stylua"];};
+          format_on_save = {
+            timeout_ms = 500;
+            lsp_fallback = true;
+          };
+        };
+
         cmp.pluginConfig.opts.__raw = ''
           function ()
             -- Inherited from the nixvimchad cmp.nix plugin
