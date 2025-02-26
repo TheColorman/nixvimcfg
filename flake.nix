@@ -9,8 +9,27 @@
   };
 
   outputs = {nixvimchad, ...}:
-    nixvimchad.configure ({pkgs,...}:  (import ./nixvim.nix) // {
+    nixvimchad.configure ({pkgs,...}:  let
+      roslyn-nvim = pkgs.vimUtils.buildVimPlugin {
+        pname = "roslyn.nvim";
+        version = "2025-02-20";
+        src = pkgs.fetchFromGitHub {
+          owner = "seblyng";
+          repo = "roslyn.nvim";
+          rev = "633a61c30801a854cf52f4492ec8702a8c4ec0e9";
+          hash = "sha256-PX0r8TFF/Y22zmx+5nYpbNjwKg4nk2N5U41uYE7YnE8=";
+        };
+      };
+    in (import ./nixvim.nix) // {
       extraPackages = with pkgs; [ nixd svelte-language-server ];
+
+      plugins.lazy.plugins = [
+        {
+          pkg = roslyn-nvim;
+          ft = "cs";
+          opts = {};
+        }
+      ];
 
       chad.plugins = {
         lspconfig.pluginConfig.config = ''
