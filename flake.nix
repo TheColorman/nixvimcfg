@@ -27,7 +27,7 @@
         {
           pkg = roslyn-nvim;
           ft = "cs";
-          opts = {};
+          opts.__raw = "{}";
         }
       ];
 
