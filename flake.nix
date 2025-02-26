@@ -27,7 +27,18 @@
         {
           pkg = roslyn-nvim;
           ft = "cs";
-          opts.__raw = "{}";
+          opts.__raw = ''{
+            config = {},
+            exe = "Microsoft.CodeAnalysis.LanguageServer",
+            args = {
+                "--logLevel=Information", "--extensionLogDirectory=" .. vim.fs.dirname(vim.lsp.get_log_path())
+            },
+            filewatching = true,
+            choose_target = nil,
+            ignore_target = nil,
+            broad_search = false,
+            lock_target = false,
+          }'';
         }
       ];
 
