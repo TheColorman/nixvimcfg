@@ -27,6 +27,7 @@
 
       plugins.lazy.plugins = [
         (import ./plugins/roslyn-nvim.nix { inherit roslyn-nvim; })
+        (import ./plugins/instant-nvim.nix { inherit (pkgs.vimPlugins) instant-nvim; })
       ];
 
       chad.plugins = {
