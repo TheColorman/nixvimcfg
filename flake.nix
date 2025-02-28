@@ -34,6 +34,7 @@
         lspconfig = (import ./chad/lspconfig.nix {});
         conform = (import ./chad/conform.nix {});
         cmp = (import ./chad/cmp.nix {});
+        treesitter = (import ./chad/treesitter.nix {});
       };
     });
   }
