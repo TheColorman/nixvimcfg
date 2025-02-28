@@ -5,7 +5,7 @@
 
       local lspconfig = require "lspconfig"
 
-      local servers = { "nixd", "svelte", "clangd", "ruff", "dockerls" }
+      local servers = { "nixd", "svelte", "clangd", "ruff", "basedpyright", "dockerls" }
       local nvlsp = require "nvchad.configs.lspconfig"
 
       for _, lsp in ipairs(servers) do
