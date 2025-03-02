@@ -45,6 +45,17 @@
     -- Ctrl+up/down to page up/down
     map("n", "<C-e>", "<C-b>M")  -- page up
     map("n", "<C-i>", "<C-f>M")  -- page down
-  '';
 
+
+    --  ▗▄▖▗▄▄▄▖▗▖ ▗▖▗▄▄▄▖▗▄▄▖ 
+    -- ▐▌ ▐▌ █  ▐▌ ▐▌▐▌   ▐▌ ▐▌
+    -- ▐▌ ▐▌ █  ▐▛▀▜▌▐▛▀▀▘▐▛▀▚▖
+    -- ▝▚▄▞▘ █  ▐▌ ▐▌▐▙▄▄▖▐▌ ▐▌
+    vim.api.nvim_set_keymap(
+      "n",
+      "gl",
+      "<cmd>lua vim.diagnostic.open_float()<CR>",
+      { noremap = true, silent = true }
+    )
+  '';
 }
