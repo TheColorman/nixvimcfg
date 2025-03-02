@@ -23,7 +23,10 @@
 
       mergedAttrs = (import ./nixvim/mappings.nix {});
     in mergedAttrs // {
-      extraPackages = with pkgs; [ nixd svelte-language-server ];
+      extraPackages = with pkgs; [
+        nixd
+        svelte-language-server
+      ];
 
       plugins.lazy.plugins = [
         (import ./plugins/roslyn-nvim.nix { inherit roslyn-nvim; })
